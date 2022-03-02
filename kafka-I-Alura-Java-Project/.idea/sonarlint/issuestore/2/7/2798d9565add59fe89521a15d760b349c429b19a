@@ -1,0 +1,13 @@
+
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ùÂÕå8‘Ù‚£ğ/
+J
+java:S3740	"/Provide the parametrized type for this generic.(³¥—ÿÿÿÿÿ
+x
+java:S3008
+"VRename this field "TYPE_CONFIG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹˜É¶şÿÿÿÿ8åôê£ğ/
+y
+java:S1104
+"WMake TYPE_CONFIG a static final constant or non-public and provide accessors if needed.(¹˜É¶şÿÿÿÿ8ñôê£ğ/
+S
+java:S1444
+"1Make this "public static TYPE_CONFIG" field final(¹˜É¶şÿÿÿÿ8ñôê£ğ/

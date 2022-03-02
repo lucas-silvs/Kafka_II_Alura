@@ -1,0 +1,13 @@
+
+\
+java:S6213":Rename this variable to not match a restricted identifier.(öˆè„ûÿÿÿÿ8‘İøï/
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ƒÇãˆúÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(«ˆÚ©
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ğ²ı’ùÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¿ÆùÂÿÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ê‰ï¦
+S	java:S106"9Replace this use of System.out or System.err by a logger.( ³·øÿÿÿÿ
+t
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€
+g
+java:S2095"JUse try-with-resources or close this "KafkaService" in a "finally" clause.(ÒÃ¨Ø8™†›£ğ/
