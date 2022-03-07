@@ -14,6 +14,7 @@
         <module>service--email</module>
         <module>service--new-order</module>
         <module>commons-kafka</module>
+        <module>Service--User</module>
     </modules>
 
     <dependencies>

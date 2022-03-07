@@ -14,7 +14,7 @@ public class NewOrderMain {
 
                 var userId = UUID.randomUUID().toString();
                 var orderId = UUID.randomUUID().toString();
-                var amount = new BigDecimal(Math.random() * 5000 + 1);
+                var amount = new BigDecimal(7000);
 
                 var order = new Order(userId, orderId, amount);
                 dispatcher.send("ECOMMERCE_NOVO_PEDIDO", userId, order);
