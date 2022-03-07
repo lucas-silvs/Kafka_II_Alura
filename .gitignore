@@ -1,0 +1,13 @@
+/kafka-I-Alura-Java-Project/data/kafka/
+/kafka-I-Alura-Java-Project/data/zookeeper/
+/kafka-I-Alura-Java-Project/target
+/kafka-I-Alura-Java-Project/commons-kafka/target
+/kafka-I-Alura-Java-Project/service--email/target
+/kafka-I-Alura-Java-Project/service--fraude-detector/target
+/kafka-I-Alura-Java-Project/service--log/target
+/kafka-I-Alura-Java-Project/service--new-order/target
+/kafka-I-Alura-Java-Project/Service--User/target
+
+
+
+
