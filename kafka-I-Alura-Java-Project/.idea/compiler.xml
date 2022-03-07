@@ -7,11 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="service--log" />
+        <module name="Service--User" />
         <module name="service--fraude-detector" />
         <module name="commons-kafka" />
         <module name="service--email" />
         <module name="service--new-order" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Service--users" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

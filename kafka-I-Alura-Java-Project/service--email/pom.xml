@@ -16,6 +16,12 @@
             <artifactId>kafka-I-Alura-Java-Project</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.com.alura</groupId>
+            <artifactId>commons-kafka</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <properties>

@@ -15,17 +15,23 @@ public class CreateUserService {
     private final Connection connection;
 
     CreateUserService() throws SQLException {
-        String url = "jdbc:sqlite:users_database.db";
+        String url = "jdbc:sqlite:target/users_database.db";
         this.connection = DriverManager.getConnection(url);
-        connection.createStatement().execute("create table Users (" +
-                "uuid varchar(200) primary key," +
-                "email varchar(200)" +
-                ");");
+
+        try {
+            connection.createStatement().execute("create table Users (" +
+                    "uuid varchar(200) primary key," +
+                    "email varchar(200)" +
+                    ");");
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
     }
 
     public static void main(String[] args) throws SQLException {
         var createUserService = new CreateUserService();
-        var kafkaService = new KafkaService<Order>(CreateUserService.class.getSimpleName(), "ECOMMERCE_NEW_ORDER", createUserService::parse, Order.class, Map.of());
+        var kafkaService = new KafkaService<>(CreateUserService.class.getSimpleName(), "ECOMMERCE_NOVO_PEDIDO", createUserService::parse, Order.class, Map.of());
         kafkaService.run();
     }
 
@@ -44,19 +50,19 @@ public class CreateUserService {
 
     }
 
-    private void inserirNovoUsuario(String email) throws SQLException {
+    private void inserirNovoUsuario( String email) throws SQLException {
         var insercao = connection.prepareStatement("insert into Users (uuid, email) " +
-                "values (?,?");
+                "values (?,?)");
         insercao.setString(1, UUID.randomUUID().toString());
         insercao.setString(2,email);
         insercao.execute();
 
-        System.out.println("usuario com email "+ email + "adicionado com sucesso");
+        System.out.println("usuario com email "+ email + " adicionado com sucesso");
     }
 
 
     private boolean isNewUser(String email) throws SQLException {
-        var verificarUsuarioExistente = connection.prepareStatement("select into uuid from Users" +
+        var verificarUsuarioExistente = connection.prepareStatement("select uuid from Users" +
                 " where email = ? limit 1");
         verificarUsuarioExistente.setString(1,email);
         var result = verificarUsuarioExistente.executeQuery();

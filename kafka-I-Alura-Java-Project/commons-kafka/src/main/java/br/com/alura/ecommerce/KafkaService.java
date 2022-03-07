@@ -18,7 +18,7 @@ public class KafkaService<T> implements Closeable {
     private KafkaConsumer<String, T> consumer;
     private final ConsumerFunction parse;
 
-     KafkaService(String groupId, String topico, ConsumerFunction parse, Class<T> typeClass, Map<String,String> mapProperties) {
+      KafkaService(String groupId, String topico, ConsumerFunction parse, Class<T> typeClass, Map<String,String> mapProperties) {
          this(groupId,parse,typeClass, mapProperties);
         this.consumer.subscribe(Collections.singletonList(topico));
     }
@@ -43,7 +43,13 @@ public class KafkaService<T> implements Closeable {
                  var records = consumer.poll(Duration.ofSeconds(1));
                  if (!records.isEmpty()) {
                      for (ConsumerRecord<String, T> record : records) {
-                         parse.consume(record);
+                         try {
+                             parse.consume(record);
+                         }
+                         catch (Exception e){
+                             e.printStackTrace();
+
+                         }
                      }
                  }
                  System.out.println("Registro vazio");
