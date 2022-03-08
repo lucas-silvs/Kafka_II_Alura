@@ -15,6 +15,7 @@
         <module>service--new-order</module>
         <module>commons-kafka</module>
         <module>Service--User</module>
+        <module>service--http-eccomerce</module>
     </modules>
 
     <dependencies>
